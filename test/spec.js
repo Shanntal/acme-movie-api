@@ -13,4 +13,16 @@ describe('Routes', ()=> {
             expect(response.text).to.include('The Home Page');
         });
     });
+    describe('GET /api/movies', () => {
+        it('show list of all movies', async()=> {
+            const response = await app.get('/api/movies');
+            expect(response.status).to.equal(200);
+        });
+    });
+    describe('GET /api/actors', () => {
+        it('show list of all actors', async()=> {
+            const response = await app.get('/api/actors');
+            expect(response.status).to.equal(200);
+        });
+    });
 });
