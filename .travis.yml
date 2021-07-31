@@ -1,5 +1,9 @@
 language: node_js
 node_js:
   - 14.16.0
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database acme_movie_api_db;' -U postgres
 
 
