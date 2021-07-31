@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const app = require('supertest')(require('../app'));
 
 describe('Routes', ()=> {
-    before(()=> syncAndSeed())
+    beforeEach(()=> syncAndSeed())
     describe('GET /', () => {
         it('show home page', async()=> {
             const response = await app.get('/');
